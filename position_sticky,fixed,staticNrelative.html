@@ -1,0 +1,127 @@
+<!doctype html>
+<html>
+  <head>
+    <title>CSS Positioning Demo</title>
+
+    <style>
+      body {
+        font-family: Arial;
+        margin: 0;
+        padding-bottom: 100px;
+      }
+
+      /* STICKY */
+      .sticky {
+        position: sticky;
+        top: 0;
+        background: black;
+        color: white;
+        padding: 20px;
+        text-align: center;
+        z-index: 10;
+      }
+
+      .section {
+        padding: 25px;
+        margin: 20px;
+        background: #eeeeee;
+      }
+
+      /* STATIC */
+      .static {
+        position: static;
+        top: 50px;
+        background: lightblue;
+        padding: 20px;
+      }
+
+      /* RELATIVE */
+      .relative {
+        position: relative;
+        top: 20px;
+        left: 30px;
+        background: lightgreen;
+        padding: 20px;
+        margin-bottom: 40px;
+      }
+
+      /* ABSOLUTE */
+      .parent {
+        position: relative;
+        height: 150px;
+        background: lightblue;
+        padding: 20px;
+      }
+
+      .absolute {
+        position: absolute;
+        top: 15px;
+        right: 15px;
+        background: orange;
+        padding: 15px;
+      }
+
+      /* FIXED */
+      .fixed {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        background: purple;
+        color: white;
+        padding: 15px;
+        border-radius: 10px;
+        z-index: 20;
+      }
+
+      .long-content {
+        height: 700px;
+        background: linear-gradient(white, lightgray);
+        padding: 25px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="sticky">STICKY NAVIGATION BAR</div>
+
+    <div class="section">
+      <h2>1. STATIC</h2>
+      <div class="static">
+        I am STATIC. I follow normal document flow. My top: 50px has no effect.
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>2. RELATIVE</h2>
+      <div class="relative">
+        I am RELATIVE. I moved 20px down and 30px to the right.
+      </div>
+      <p>Notice that my original space is preserved.</p>
+    </div>
+
+    <div class="section">
+      <h2>3. ABSOLUTE</h2>
+
+      <div class="parent">
+        I am the RELATIVE PARENT.
+
+        <div class="absolute">I am ABSOLUTE.</div>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>4. FIXED</h2>
+      <p>Look at the bottom-right corner of your screen.</p>
+    </div>
+
+    <div class="long-content">
+      <h2>5. SCROLL DOWN</h2>
+      <p>Keep scrolling to observe the sticky navigation and fixed button.</p>
+      <p>
+        The sticky navigation stays at the top after reaching its threshold.
+      </p>
+    </div>
+
+    <div class="fixed">FIXED BUTTON</div>
+  </body>
+</html>
